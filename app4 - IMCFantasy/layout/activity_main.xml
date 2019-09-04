@@ -39,9 +39,8 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/spSexo">
-
-            </Spinner>
+                android:id="@+id/spSexo"
+                android:entries="@array/opcsexo"></Spinner>
 
             <EditText
                 android:layout_width="match_parent"
@@ -68,7 +67,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Verificar"
+                android:onClick="calcular"
                 android:id="@+id/btVerifica"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtResultado"/>
         </LinearLayout>
 
     </LinearLayout>

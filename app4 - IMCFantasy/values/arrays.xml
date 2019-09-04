@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opcsexo">
+        <item>Masculino</item>
+        <item>Feminimo</item>
+        <item>Não-binárie</item>
+        <item>Gênero queer</item>
+        <item>Agênero</item>
+        <item>Gênero-fluido</item>
+        <item>Homem não-binárie</item>
+        <item>Mulher não-binárie</item>
+        <item>Demigênero</item>
+        <item>Andrógine</item>
+        <item>Transfeminine</item>
+        <item>Transmasculine</item>
+        <item>Transneutre</item>
+        <item>Neutrois</item>
+        <item>Intergênero</item>
+        <item>Neurogênero</item>
+        <item>Kingênero</item>
+        <item>Aporagênero</item>
+        <item>Maverique</item>
+        <item>Drag Quenn</item>
+        <item>Drag King</item>
+        <item>Pomogênero</item>
+        <item>Turbogênero</item>
+        <item>Pendogênero</item>
+        <item>Nanogênero</item>
+        <item>Quivergênero</item>
+        <item>Ciclogênero</item>
+        <item>Gênero-fogo</item>
+    </string-array>
+</resources>
+
