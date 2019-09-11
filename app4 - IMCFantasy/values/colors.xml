@@ -7,5 +7,5 @@
     <color name="corPrimariaEscura">#8A2BE2</color>
     <color name="corDestaque">#00CED1</color>
     <color name="corSombra">#708090</color>
-    <color name="fundo">#ADD8E6</color>
+    <color name="fundo">#FFFFFF</color>
 </resources>
