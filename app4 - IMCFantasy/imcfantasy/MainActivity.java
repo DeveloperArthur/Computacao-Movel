@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         this.txtResultado = findViewById(R.id.txtResultado);
         this.imgResultado = findViewById(R.id.imgResultado);
         this.spSexo = findViewById(R.id.spSexo);
+        this.imgResultado.setImageResource(R.drawable.inicial);
     }
 
     public void calcular(View view){
