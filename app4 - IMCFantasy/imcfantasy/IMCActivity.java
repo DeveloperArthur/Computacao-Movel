@@ -5,34 +5,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-    public EditText etAltura;
-    public EditText etPeso;
+public class IMCActivity extends AppCompatActivity {
     public TextView txtResultado;
     private ImageView imgResultado;
-    private Spinner spSexo;
+    double peso;
+    double altura;
+    int sexo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        this.etAltura = findViewById(R.id.etAltura);
-        this.etPeso = findViewById(R.id.etPeso);
+        setContentView(R.layout.activity_imc);
         this.txtResultado = findViewById(R.id.txtResultado);
         this.imgResultado = findViewById(R.id.imgResultado);
-        this.spSexo = findViewById(R.id.spSexo);
-        this.imgResultado.setImageResource(R.drawable.inicial);
+        Intent it = getIntent();
+        Bundle bundle = it.getExtras();
+        if(bundle != null){
+            peso = bundle.getDouble("peso");
+            altura = bundle.getDouble("altura");
+            sexo = bundle.getInt("sexo");
+            this.calcular();
+        }
+
     }
 
-    public void calcular(View view){
+    public void calcular(){
         double resultadoConta = 0;
-        double altura = 0;
-        double peso = 0;
-        int sexo = 0;
 
         resultadoConta = peso / (altura * altura);
 
@@ -78,27 +78,5 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
-    }
-
-    public void abrirProximaTela(View view){
-        Intent it = new Intent(this, IMCActivity.class);
-        double altura = 0;
-        double peso = 0;
-        int sexo = 0;
-        if(this.spSexo.getSelectedItemPosition()==0){
-            sexo = 0;
-        }else if(this.spSexo.getSelectedItemPosition()==1){
-            sexo = 1;
-        }else{
-            sexo = 2;
-        }
-
-        peso = Double.parseDouble(this.etPeso.getText().toString());
-        altura = Double.parseDouble(this.etAltura.getText().toString());
-        it.putExtra("peso", peso);
-        it.putExtra("altura", altura);
-        it.putExtra("sexo", sexo);
-
-        startActivity(it);
     }
 }
