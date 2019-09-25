@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Bebida">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="320dp"
+            tools:layout_editor_absoluteY="227dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="295dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dentadura" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:text="Água" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/desicao" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:text="Quer tomar Aquela Decisão Errada?" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/jeuss" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:text="Guarana Jesus" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="263dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/lean" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:text="Codeina com Sprite, Lean" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="198dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginBottom="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/bComida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/bSobremesa"
+        android:layout_width="193dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="75dp"
+        android:onClick="chamarTelaSobremesa"
+        android:text="SOBREMESA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bBebida"></Button>
+
+    <Button
+        android:id="@+id/bComida"
+        android:layout_width="193dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="39dp"
+        android:onClick="chamarTelaComida"
+        android:text="COMIDA"
+        app:layout_constraintBottom_toTopOf="@+id/bBebida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"></Button>
+
+    <Button
+        android:id="@+id/bBebida"
+        android:layout_width="193dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="37dp"
+        android:onClick="chamarTelaBebida"
+        android:text="BEBIDA"
+        app:layout_constraintBottom_toTopOf="@+id/bSobremesa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bComida"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
