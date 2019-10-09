@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_saldo">
+
+    <fragment
+        android:id="@+id/nav_saldo"
+        android:name="com.example.arthurbank.SaldoFragment"
+        android:label="Saldo"
+        tools:layout="@layout/fragment_saldo2" />
+
+    <fragment
+        android:id="@+id/nav_deposito"
+        android:name="com.example.arthurbank.DepositoFragment"
+        android:label="Deposito"
+        tools:layout="@layout/fragment_deposito" />
+
+    <fragment
+        android:id="@+id/nav_pagamento"
+        android:name="com.example.arthurbank.PagamentoFragment"
+        android:label="Pagamento de conta"
+        tools:layout="@layout/fragment_pagamento" />
+
+    <fragment
+        android:id="@+id/nav_transferencia"
+        android:name="com.example.arthurbank.TransferenciaFragment"
+        android:label="Transferencia"
+        tools:layout="@layout/fragment_transferencia" />
+</navigation>
