@@ -9,40 +9,79 @@ import com.example.chamadapersonalizada.entities.Aluno;
 import com.example.chamadapersonalizada.helpers.AlunoBancoHelper;
 
 public class AlunoBancoController {
-    private SQLiteDatabase bd;
+    private SQLiteDatabase db;
     private AlunoBancoHelper alunoBancoHelper;
 
-    public AlunoBancoController(Context context){
+    public AlunoBancoController(Context context) {
         this.alunoBancoHelper = new AlunoBancoHelper(context);
     }
 
-    public boolean add(Aluno aluno){
-        ContentValues values;
+    public boolean add(Aluno aluno) {
+        ContentValues valores;
         long resultado;
-        this.bd = alunoBancoHelper.getWritableDatabase();
-        values = new ContentValues();
-        values.put(AlunoBancoHelper.FIELD_NOME, aluno.getNome());
-        values.put(AlunoBancoHelper.FIELD_FOTO, aluno.getFoto());
-        resultado = bd.insert(AlunoBancoHelper.TABELA, null, values);
-        bd.close();
-        if(resultado == -1)
+        this.db = alunoBancoHelper.getWritableDatabase();
+        valores = new ContentValues();
+        valores.put(AlunoBancoHelper.FIELD_NOME, aluno.getNome());
+        valores.put(AlunoBancoHelper.FIELD_FOTO, aluno.getFoto());
+        resultado = db.insert(AlunoBancoHelper.TABELA,
+                null, valores);
+        db.close();
+        if (resultado == -1)
             return false;
-        else return true;
+        else
+            return true;
     }
 
-    public Cursor getAll(){
+    public Cursor getAll() {
         Cursor cursor;
-        String[] campos = {
-            alunoBancoHelper.ID,
-            alunoBancoHelper.FIELD_NOME,
-            alunoBancoHelper.FIELD_FOTO
-        };
-        bd = alunoBancoHelper.getReadableDatabase();
-        cursor = bd.query(alunoBancoHelper.TABELA, campos, null,null,null,null,null,null);
-        if (cursor != null){
+        String[] campos = {alunoBancoHelper.ID,
+                alunoBancoHelper.FIELD_NOME,
+                alunoBancoHelper.FIELD_FOTO};
+        db = alunoBancoHelper.getReadableDatabase();
+        cursor = db.query(alunoBancoHelper.TABELA,
+                campos,
+                null,
+                null,
+                null,
+                null,
+                null, null);
+        if (cursor != null) {
             cursor.moveToFirst();
         }
-        bd.close();
+        db.close();
         return cursor;
+    }
+
+    public Cursor getById(int id) {
+        Cursor cursor;
+        String[] campos =
+                {alunoBancoHelper.ID, alunoBancoHelper.FIELD_NOME, alunoBancoHelper.FIELD_FOTO};
+        String where = alunoBancoHelper.ID + "=" + id;
+        db = alunoBancoHelper.getReadableDatabase();
+        cursor = db.query(alunoBancoHelper.TABELA, campos, where, null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
+
+    public void update(Aluno aluno) {
+        ContentValues valores;
+        String where;
+        db = alunoBancoHelper.getWritableDatabase();
+        where = alunoBancoHelper.ID + "=" + aluno.getId();
+        valores = new ContentValues();
+        valores.put(AlunoBancoHelper.FIELD_NOME, aluno.getNome());
+        valores.put(AlunoBancoHelper.FIELD_FOTO, aluno.getFoto());
+        db.update(alunoBancoHelper.TABELA, valores, where, null);
+        db.close();
+    }
+
+    public void remove(int id) {
+        String where = alunoBancoHelper.ID + "=" + id;
+        db = alunoBancoHelper.getReadableDatabase();
+        db.delete(AlunoBancoHelper.TABELA, where, null);
+        db.close();
     }
 }
